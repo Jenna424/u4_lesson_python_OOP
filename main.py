@@ -20,3 +20,56 @@
 # 9 Create a new instance of the cat class and test your methods.
 
 # 10 Make your instance of the cat class eat some food and print out what food it has eaten.
+
+
+class Animal:
+    def __init__(self, name, breed):
+        self.name = name
+        self.breed = breed
+        self.diet = []
+
+    def eat(self, food):
+        self.diet.append(food)
+
+
+class Dog(Animal):
+    def __init__(self, name, breed, color):
+        super().__init__(name, breed)
+        self.color = color
+
+    def bark(self):
+        print('{name} barked!'.format(name=self.name))
+
+    def what_color(self):
+        print('{name} the dog is the color {color}!'.format(
+            name=self.name, color=self.color))
+
+
+my_dog = Dog('Delilah', 'labrador retriever', 'yellow')
+print(my_dog.bark())
+print(my_dog.what_color())
+my_dog.eat('kibble')
+print(my_dog.diet)
+
+
+class Cat(Animal):
+    def __init__(self, name, breed, has_claws):
+        super().__init__(name, breed)
+        self.has_claws = has_claws
+
+    def check_has_claws(self):
+        if self.has_claws:
+            print('{name} has claws!'.format(name=self.name))
+        else:
+            print('{name} does not have claws!'.format(name=self.name))
+
+    def meow(self):
+        print('The cat named {name} meowed!'.format(
+            name=self.name))
+
+
+my_cat = Cat('Zelig', 'Maine coon', True)
+print(my_cat.check_has_claws())
+print(my_cat.meow())
+my_cat.eat('chicken meaty morsels')
+print(my_cat.diet)
