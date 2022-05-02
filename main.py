@@ -46,8 +46,8 @@ class Dog(Animal):
 
 
 my_dog = Dog('Delilah', 'labrador retriever', 'yellow')
-print(my_dog.bark())
-print(my_dog.what_color())
+my_dog.bark()
+my_dog.what_color()
 my_dog.eat('kibble')
 print(my_dog.diet)
 
@@ -69,7 +69,7 @@ class Cat(Animal):
 
 
 my_cat = Cat('Zelig', 'Maine coon', True)
-print(my_cat.check_has_claws())
-print(my_cat.meow())
+my_cat.check_has_claws()
+my_cat.meow()
 my_cat.eat('chicken meaty morsels')
 print(my_cat.diet)
